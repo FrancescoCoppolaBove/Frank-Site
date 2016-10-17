@@ -1,0 +1,44 @@
+body
+  overflow: hidden
+
+.home-wrapper
+  position: relative
+  height: 100vh
+  //overflow: hidden
+
+.container
+  width: 100%
+  max-width: 1320px
+  margin: 0 auto
+  display: flex
+
+// columns
+
+.col
+  float: left
+  padding: 0 10px
+
+.col-1
+  width: 25%
+
+.col-2
+  width: 50%
+
+.col-3
+  width: 75%
+
+.col-4
+  width: 100%
+
+.clear-float
+  clear: both
+  line-height: 0
+  font-size: 0
+  height: 0
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px)
+	.col
+    margin: 1% 0 1% 0%
+	.col-1, .col-2, .col-3, .col-4
+    width: 100%

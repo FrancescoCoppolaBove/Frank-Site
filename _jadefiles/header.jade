@@ -1,0 +1,22 @@
+mixin nav-content()
+  ul
+    li: a(href="#me") me
+    li: a(href="#projects") projects
+    li: a(href="#contact") contact
+
+
+
+
+header
+  .container
+    a(href="www.frankcoppolabove.com"): h1.logo Frank Coppola Bove
+
+    nav
+      +nav-content()
+    
+    
+    
+    button.hamburger.hamburger--elastic
+      span.hamburger-box
+        span.hamburger-inner
+    
