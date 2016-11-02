@@ -1,10 +1,10 @@
 .menu-mobile-wrap
-  position: absolute
+  position: fixed
   right: 0
   background: rgba(10,10,10,1.0)
   z-index: 1001
   width: 300px
-  height: 93vh
+  height: 100vh
   transform: translate3d(300px,0,0)
   transition: transform 0.3s
 
@@ -69,8 +69,44 @@
 
 .main.show-menu:after
   opacity: 1
-  transition: opacity 0.3s
+  transition: opacity 0.6s
   visibility: visible
+
+.show-menu > .container .menu-mobile-wrap .menu-mobile nav ul li
+  opacity: 0
+  animation:
+    name: appear
+    duration: 600ms
+    timing-function: ease-in-out
+    fill-mode: forwards
+
+
+@keyframes appear
+  0%
+    opacity: 0
+    transform: translateX(50px)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+.show-menu > .container .menu-mobile-wrap .menu-mobile .icon-div a .zmdi
+  opacity: 0
+  animation:
+    name: fromUnder
+    duration: 600ms
+    timing-function: ease-in-out
+    fill-mode: forwards
+
+@keyframes fromUnder
+  0%
+    opacity: 0
+    transform: translateY(60px)
+  50%
+    opacity: 0.5
+  100%
+    opacity: 1
+    transform: translateY(0)
+
 
 @media (max-width: 640px)
   .menu-mobile nav

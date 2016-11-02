@@ -1,6 +1,6 @@
 section.main
   position: relative
-  height: 93vh
+  height: 100vh
   background-color: black
   background:
     image: url(../img/face.jpg)
@@ -11,36 +11,70 @@ section.main
     content: ''
     position: fixed
     top: 0
+    bottom: 0
     right: 300px
     width: 100%
-    height: 100%
     background: rgba(0,0,0,0.6)
     opacity: 0
     visibility: hidden
-  .main-text
-    height: 100%
-    text-align: left
-    margin-top: 4%
-    p
-      color: rgba(255,255,255,0.8)
-      font-family: 'Roboto Mono', sans-serif
-      font-size: 4.8em
-      line-height: 1.1em
-      margin-bottom: 0.1em
-      span
-        color: white
-        font-weight: 500
-    h2
-      color: rgba(255,255,255,0.8)
-      font-family: 'Roboto Mono', sans-serif
-      font-size: 4.8em
-      line-height: 1.1em
-      margin: 0
-      padding: 0
-      margin-bottom: 5%
-      font-weight: normal
-      #typed-strings
-        display: none
+    z-index: 999
+  .container
+    height: 93vh
+    .main-text
+      text-align: left
+      position: absolute
+      top: 15%
+      p
+        color: rgba(255,255,255,0.8)
+        font-family: 'Roboto Mono', sans-serif
+        font-size: 4.8em
+        line-height: 1.1em
+        margin-bottom: 0.1em
+        span
+          color: white
+          font-weight: 500
+      h2
+        color: rgba(255,255,255,0.8)
+        font-family: 'Roboto Mono', sans-serif
+        font-size: 4.8em
+        line-height: 1.1em
+        margin: 0
+        padding: 0
+        margin-bottom: 5%
+        font-weight: normal
+        #typed-strings
+          display: none
+
+    .mouse
+      width: 23px
+      height: 40px
+      position: absolute
+      bottom: 0
+      left: 50%
+      margin-bottom: 0.5em
+      border-radius: 3em
+      border: solid 1px white
+      transform: translateX(-50%)
+    .mouse-roll
+      position: absolute
+      width: 2px
+      height: 4px
+      background-color: white
+      bottom: 0
+      left: calc(50% - 1px)
+      border-radius: 3em
+      margin-bottom: 38px
+      animation: scroll 1.2s ease-in-out infinite
+
+@keyframes scroll
+  0%
+    transform: translateY(0)
+    opacity: 1
+
+  100%
+    transform: translateY(20px)
+    opacity: 0
+
 
 #typed
   color: white
@@ -49,9 +83,21 @@ section.main
   line-height: 1.1em
   font-weight: normal
 
+
+
+
+
+
+
+
 @media (max-width: 1300px)
-  #typed
-    font-size: 4.5em
+  section.main
+    .container
+      .main-text
+        padding-left: 2%
+        font-size: 2.5vh
+      #typed
+        font-size: 10vh
 
 @media (max-width: 1200px)
   #typed
@@ -59,13 +105,15 @@ section.main
 
 @media (max-width: 1000px)
   section.main
-    .main-text
-      width: 100%
-      p
-        font-size: 4em
-      h2
-        width: 70%
-        font-size: 4em
+    .container
+      .main-text
+        width: 100%
+        padding-left: 2%
+        p
+          font-size: 4em
+        h2
+          width: 70%
+          font-size: 4em
 
 @media (max-width: 800px)
   #typed
@@ -73,28 +121,51 @@ section.main
 
 @media (max-width: 700px)
   section.main
-    .main-text
-      margin-top: 15%
-      width: 100%
-      p
+    .container
+      .main-text
+        padding-left: 3%
+        margin-top: 15%
+        width: 100%
+        p
+          font-size: 3em
+        h2
+          width: 70%
+          font-size: 3em
+      #typed
         font-size: 3em
-      h2
-        width: 70%
-        font-size: 3em
-    #typed
-      font-size: 3em
+
 
 @media (max-width: 500px)
   section.main
-    .main-text
-      width: 100%
-      text-align: center
-      margin-top: 20%
-      p
-        font-size: 2em
-      h2
+    .container
+      .main-text
         width: 100%
+        text-align: center
+        margin-top: 20%
+        p
+          font-size: 2em
+        h2
+          width: 100%
+          font-size: 2em
+      #typed
+        text-align: center
         font-size: 2em
-    #typed
-      text-align: center
-      font-size: 2em
+
+
+@media (max-width: 640px)
+  section.main
+    .container
+      .mouse
+        margin-bottom: 4%
+      .mouse-roll
+        margin-bottom: 58px
+
+
+@media (max-width: 400px)
+  section.main
+    height: 100vh
+    .container
+      .mouse
+        margin-bottom: -9%
+      .mouse-roll
+        margin-bottom: -2px
