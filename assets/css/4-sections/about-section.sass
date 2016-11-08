@@ -1,5 +1,4 @@
 section.about
-  height: auto
   color: black
   background-color: white
   padding: 100px 0
@@ -11,7 +10,7 @@ section.about
   .big-text
     position: absolute
     top: -8%
-    left: -10%
+    left: 0
     width: 100%
     font-size: 11.3em
     font-weight: 900
@@ -50,27 +49,41 @@ section.about
 svg
   width: 120px
 
+.svg
+  stroke-dasharray: 296
+  stroke-dashoffset: 296
+  fill-opacity: 0
+  animation: dash 3s linear forwards, FillIn 1s linear forwards 3s
 
-@media (max-width: 1579px)
+@keyframes dash
+  to
+    stroke-dashoffset: 0
+
+@keyframes FillIn
+  0%
+    fill-opacity: 0
+  100%
+    fill-opacity: 1
+
+
+@media (max-width: 1310px)
   section.about
     .container
       .big-text
-        span
-          position: absolute
-          left: 0
-
+          top: -2%
+          font-size: 8.7em
 
 @media (max-width: 1000px)
   section.about
+    .container
+      .big-text
+        display: none
     .inner-about
       h3
         text-align: center
 
 @media (max-width: 700px)
   section.about
-    .big-text
-      span
-        display: none
     .inner-about
       .col-1
         width: 50%

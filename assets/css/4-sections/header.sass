@@ -2,6 +2,9 @@
   header
     background-color: black
     width: 100%
+    position: fixed
+    z-index: 1010
+    transition: all 500ms ease-in-out 0s
 
     .container
       justify-content: space-between
@@ -44,6 +47,15 @@
                 width: 100%
                 background-color: #b5a200
 
+.is-show
+  transform: translateY(0)
+.home-wrapper
+  header.on-scrolling
+    background-color: rgba(0,0,0,0.6)
+    height: 50px
+
+.is-hidden
+  transform: translateY(-100%)
 
 @media (max-width: 640px)
   header
