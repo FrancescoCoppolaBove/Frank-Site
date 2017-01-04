@@ -935,7 +935,7 @@ section.main {
     visibility: hidden;
     z-index: 999; }
   section.main .container {
-    height: 93vh; }
+    height: 100vh; }
     section.main .container .main-text {
       text-align: left;
       margin-top: 10%;
@@ -1070,11 +1070,7 @@ section.main {
 
 @media (max-width: 400px) {
   section.main {
-    height: 100vh; }
-    section.main .container .mouse {
-      margin-bottom: -9%; }
-    section.main .container .mouse-roll {
-      margin-bottom: -2px; } }
+    height: 100vh; } }
 
 @media (max-width: 399px) {
   section.main .container .mouse {
